@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.common.js --watch"
+    "dev": "webpack serve --config webpack.common.js"
   },
   "dependencies": {
     "phaser": "^3.55.2",

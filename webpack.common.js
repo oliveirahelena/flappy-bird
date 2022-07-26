@@ -5,6 +5,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
+  watch: true,
   entry: {
     app: './src/index.js'
   },
@@ -36,7 +37,9 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
+    static: {
+      directory: path.join(__dirname, 'build'),
+    },
     compress: true,
     port: 8080,
   },
@@ -51,8 +54,8 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'assets/**/*'),
-          to: path.resolve(__dirname, 'build')
+          from: path.resolve(__dirname, 'assets'),
+          to: path.resolve(__dirname, 'build/assets')
         }
       ],
     })
